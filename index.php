@@ -28,7 +28,7 @@ if($start !== -1)
 {
 	$controllerName = $params[$start];
 
-	$functionName = $params[$start + 1];
+	$functionName = $params[$start + 1] .  ucfirst(strtolower($_SERVER['REQUEST_METHOD']));
 
 	$args = [];
 
