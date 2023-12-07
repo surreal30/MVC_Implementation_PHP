@@ -1,17 +1,20 @@
 <?php
 
 require_once __DIR__ . '/CJ_Controller.php';
+require_once __DIR__ . '/../model/TestModel.php';
 
 class TestController extends CJ_Controller
 {
 	public function __construct()
 	{
 		echo "Class Created" . "<BR>";
+
+		$this->testModel = new testModel();
 	}
 
 	public function helloGet(...$args)
 	{
-		echo "Hello from GET";
+		$this->testModel->sayHello('CJ_MODEL');
 	}
 
 	public function helloPost(...$args)
