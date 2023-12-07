@@ -9,6 +9,16 @@ class CJ_Controller
 
 	public function loadView($view, $args)
 	{
-		// Some code to be put here
+		foreach($args as $viewName => $viewValue)
+		{
+			$$viewName = $viewValue;
+		}
+
+		require_once __DIR__ . "/../view" . $view . ".php";
+	}
+
+	public function testGet()
+	{
+		$this->loadView("home", ["content" => "This content is set from controller"]);
 	}
 }
